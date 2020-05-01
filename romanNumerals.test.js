@@ -9,6 +9,8 @@ romanNumerals = (numberToConvert) => {
       result = "V";
     } else if (numberToConvert === 6) {
       result = "VI";
+    } else if (numberToConvert === 9) {
+      result = "IX";
     }
   }
   return result;
@@ -52,4 +54,9 @@ test("Given the number '5', it should return 'V'", () => {
 test("Given the number '6', it should return 'VI'", () => {
   // This can be slimed
   expect(romanNumerals(6)).toBe("VI");
+});
+
+test("Given the number '9', it should return 'IV'", () => {
+  // Slimed again
+  expect(romanNumerals(9)).toBe("IX");
 });
