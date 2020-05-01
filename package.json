@@ -1,0 +1,14 @@
+{
+  "name": "roman-numerals-kata",
+  "version": "1.0.0",
+  "description": "Roman Numerals kata (https://learn.madetech.com/katas/roman-numerals/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^25.5.3"
+  }
+}
