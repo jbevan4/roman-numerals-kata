@@ -1,6 +1,6 @@
 romanNumerals = (numberToConvert) => {
-  if (numberToConvert === 1) {
-    return "I";
+  if (numberToConvert > 0) {
+    return "I".repeat(numberToConvert);
   } else {
     return "II";
   }
@@ -23,4 +23,9 @@ test("Given the number '1', it should return 'I'", () => {
 test("Given the number '2', it should return 'I'", () => {
   // This passes again because we are sliming production
   expect(romanNumerals(2)).toBe("II");
+});
+
+test("Given the number '3', it should return 'III", () => {
+  // This is the point at which we push the pain as a pattern is emerging
+  expect(romanNumerals(3)).toBe("III");
 });
