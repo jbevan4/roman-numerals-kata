@@ -5,8 +5,10 @@ romanNumerals = (numberToConvert) => {
       result = "I".repeat(numberToConvert);
     } else if (numberToConvert === 4) {
       result = "IV";
-    } else {
+    } else if (numberToConvert === 5) {
       result = "V";
+    } else if (numberToConvert === 6) {
+      result = "VI";
     }
   }
   return result;
@@ -45,4 +47,9 @@ test("Given the number '4', it should return 'IV'", () => {
 test("Given the number '5', it should return 'V'", () => {
   // Another unique case for now, so we can slime it
   expect(romanNumerals(5)).toBe("V");
+});
+
+test("Given the number '6', it should return 'VI'", () => {
+  // This can be slimed
+  expect(romanNumerals(6)).toBe("VI");
 });
