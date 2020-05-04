@@ -1,18 +1,17 @@
+let romanUniqueBreakpoints = [
+  { number: 10, symbol: "X" },
+  { number: 9, symbol: "IX" },
+  { number: 5, symbol: "V" },
+  { number: 4, symbol: "IV" },
+  { number: 1, symbol: "I" },
+];
+
 romanNumerals = (numberToConvert) => {
   let result = "";
-  if (numberToConvert) {
-    if (numberToConvert <= 3) {
-      result = "I".repeat(numberToConvert);
-    } else if (numberToConvert === 4) {
-      result = "IV";
-    } else if (numberToConvert === 5) {
-      result = "V";
-    } else if (numberToConvert === 6) {
-      result = "VI";
-    } else if (numberToConvert === 9) {
-      result = "IX";
-    } else if (numberToConvert === 10) {
-      result = "X";
+  for (let romanPair of romanUniqueBreakpoints) {
+    while (numberToConvert >= romanPair.number) {
+      result += romanPair.symbol;
+      numberToConvert -= romanPair.number;
     }
   }
   return result;
@@ -66,4 +65,9 @@ test("Given the number '9', it should return 'IV'", () => {
 test("Given the number '10', it should return 'X'", () => {
   // Slimed... For the last time
   expect(romanNumerals(10)).toBe("X");
+});
+
+test("Given the number '11', it should return 'XI'", () => {
+  // Right... Lets add some logic...
+  expect(romanNumerals(11)).toBe("XI");
 });
